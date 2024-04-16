@@ -1,0 +1,422 @@
+<HTML>
+<HEAD>
+<TITLE> Santa Cruz Fishing Report for Stagnaro Fishing Trips and Charters, Monterey Bay, CA</TITLE>
+
+<META NAME="DESCRIPTION" CONTENT="Fishing Report for Stagnaro Fishing Trips and Charters, Santa Cruz and Monterey Bay, CA">
+
+<META NAME="KEYWORDS" CONTENT="fishing reports, reports, fish reports, charters, Stagnaros, Stagnaros Sport Fishing, Stagnaro Charter Boats,  whales, Santa Cruz Harbor, Monterey Bay, Monterey, Santa Cruz, California, boats, California, coast">
+
+<style>
+
+
+h3 {
+    color: red;
+    margin-bottom: -8px;
+}
+</style>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-144277483-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-144277483-1');
+</script>
+
+
+</head>
+
+<script language="JavaScript">
+<!--
+
+if (document.images) {
+  image1on = new Image();
+  image1on.src = "../nav/btfishtrips2.gif";
+
+  image2on = new Image();
+  image2on.src = "../nav/btwhale2.gif";
+
+  image3on = new Image();
+  image3on.src = "../nav/btscenic2.gif";
+
+  image4on = new Image();
+  image4on.src = "../nav/btreport2.gif";
+
+  image5on = new Image();
+  image5on.src = "../nav/btseastag2.gif";
+
+  image7on = new Image();
+  image7on.src = "../nav/btcharter2.gif";
+
+  image8on = new Image();
+  image8on.src = "../nav/btbooking2.gif";
+
+  image9on = new Image();
+  image9on.src = "../nav/btlinks2.gif";
+
+  image10on = new Image();
+  image10on.src = "../nav/bthome2.gif";
+
+  image11on = new Image();
+  image11on.src = "../nav/btlocation2.gif";
+
+  image12on = new Image();
+  image12on.src = "../nav/btcalendar2.gif";
+
+  image13on = new Image();
+  image13on.src = "../nav/btscatterings2.gif";
+
+  image1off = new Image();
+  image1off.src = "../nav/btfishtrips1.gif";
+
+  image2off = new Image();
+  image2off.src = "../nav/btwhale1.gif";
+
+  image3off = new Image();
+  image3off.src = "../nav/btscenic1.gif";
+
+  image4off = new Image();
+  image4off.src = "../nav/btreport1.gif";
+
+  image5off = new Image();
+  image5off.src = "../nav/btseastag1.gif";
+
+  image7off = new Image();
+  image7off.src = "../nav/btcharter1.gif";
+
+  image8off = new Image();
+  image8off.src = "../nav/btbooking1.gif";
+
+  image9off = new Image();
+  image9off.src = "../nav/btlinks1.gif";
+
+  image10off = new Image();
+  image10off.src = "../nav/bthome1.gif";
+
+  image11off = new Image();
+  image11off.src = "../nav/btlocation1.gif";
+
+  image12off = new Image();
+  image12off.src = "../nav/btcalendar1.gif";
+
+  image13off = new Image();
+  image13off.src = "../nav/btscatterings1.gif";
+
+}
+
+function changeImages() {
+  if (document.images) {
+    for (var i=0; i<changeImages.arguments.length; i+=2) {
+      document[changeImages.arguments[i]].src = eval(changeImages.arguments[i+1] + ".src");
+    }
+  }
+}
+
+// -->
+</script>
+<style type="text/css">
+<!--
+#salmon {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: bold;
+	color: #FFF;
+	background-color: #C30;
+	text-align: center;
+}
+-->
+</style></HEAD>
+
+<BODY BACKGROUND="../bg1.gif">
+
+<TABLE WIDTH="740">
+<TR>
+<TD WIDTH="40">
+<TD WIDTH="220"  VALIGN="top">
+<IMG SRC="../logo.gif" ALT ="Logo" WIDTH="179" HEIGHT="189">
+<BR>
+<TABLE WIDTH="210">
+<TR>
+<TD WIDTH="210">
+
+<a href="../boat.html" onMouseOver="changeImages('image5', 'image5on')" onMouseOut="changeImages('image5', 'image5off')"><img name="image5" src="../nav/btseastag1.gif" alt="Velocity" width=152 height=16 border=0></a><a href="../fishtrips.html" onMouseOver="changeImages('image1', 'image1on')" onMouseOut="changeImages('image1', 'image1off')"><img name="image1" src="../nav/btfishtrips1.gif" alt="Fishing Trips" width=152 height=16 border=0></a><a href="../whale.html" onMouseOver="changeImages('image2', 'image2on')" onMouseOut="changeImages('image2', 'image2off')"><img name="image2" src="../nav/btwhale1.gif" alt="Whale Watching" width=152 height=16 border=0></a><a href="../tours.html" onMouseOver="changeImages('image3', 'image3on')" onMouseOut="changeImages('image3', 'image3off')"><img name="image3" src="../nav/btscenic1.gif" alt="Scenic Tours" width=152 height=16 border=0></a><img name="image4" src="../nav/btreport2.gif" alt="Fishing Report" width=152 height=16 border=0><a href="../charters.html" onMouseOver="changeImages('image7', 'image7on')" onMouseOut="changeImages('image7', 'image7off')"><img name="image7" src="../nav/btcharter1.gif" alt="Private Charters" width=152 height=16 border=0></a><a href="../ash_scatterings.html" onMouseOver="changeImages('image13', 'image13on')" onMouseOut="changeImages('image13', 'image13off')"><img name="image13" src="../nav/btscatterings1.gif" alt="Ash Scatterings" width=152 height=16 border="0"></a><a href="http://www.#/Stagnaros" target="_new" onMouseOver="changeImages('image8', 'image8on')" onMouseOut="changeImages('image8', 'image8off')"><a href="../locations.html" onMouseOver="changeImages('image11', 'image11on')" onMouseOut="changeImages('image11', 'image11off')"><img name="image11" src="../nav/btlocation1.gif" alt="Directions" width=200 height=16 border=0></a><a href="../links.html" onMouseOver="changeImages('image9', 'image9on')" onMouseOut="changeImages('image9', 'image9off')"><img name="image9" src="../nav/btlinks1.gif" alt="Links" width=152 height=16 border=0></a><a href="../index.html" onMouseOver="changeImages('image10', 'image10on')" onMouseOut="changeImages('image10', 'image10off')"><img name="image10" src="../nav/bthome1.gif" alt="Home" width=152 height=16 border=0></a>
+
+</TD>
+</TR>
+</TABLE>
+</TD>
+<TD WIDTH="480" VALIGN="top">
+<CENTER>
+
+<IMG SRC="../nav/tistagnaros.gif" ALT="Stagnaro Sport Fishing, Charters and Whale Watching Cruises, Santa Cruz and Monterey Bay, California (CA)" WIDTH="446" HEIGHT="65">
+
+
+<BR><IMG SRC="../gaf.jpg" ALT ="Santa Cruz Sport Fishing Trips and Charters - Albacore, Salmon, Cod, Rockfish, California (CA)" WIDTH="225" HEIGHT="310" VSPACE="2">
+
+<BR><IMG SRC="../nav/tireport.gif" ALT ="Fishing Report for Santa Cruz, California - Stagnaro Sport Fishing, Santa Cruz and Monterey Bay, California (CA)" WIDTH="312" HEIGHT="40">
+</CENTER>
+
+</TD>
+</TR>
+
+<TR>
+<TD WIDTH="40">&nbsp;
+
+</TD>
+<TD WIDTH="700" COLSPAN="2" ALIGN="CENTER"><TABLE WIDTH="650">
+  <TR>
+  <TD WIDTH="650">
+  <FONT FACE="arial, helvetica" SIZE="-1">
+  <h3>2019</h3>
+
+<!--begin-->
+<br><B>Date:</B> Tuesday, July 23, 2019 at 12:11:30<BR>
+<b>Current Report: </B><BLOCKQUOTE>FRIDAY: 22 ppl with limits of rock cod--reds and yellows. The best fishing our 7-hour Cod trip has seen yet this year.__ 
+SATURDAY Morning Half Day 31 ppl with 204 rock cod. __
+SATURDAY Afternoon Twilight trip, 31 ppl with 165 Rock cod.__
+SUNDAY: North Coast trip, 31 ppl with 25 lings and 135 nice quality rock fish.
+</BLOCKQUOTE><HR>
+
+<br><B>Date:</B> Saturday, January 5, 2019 at 10:16:51<BR>
+<b>Current Report: </B><BLOCKQUOTE>Happy New Years 2019!  On our first Sand Dabs trip of the year we caught 300 Sand Dabs for 14 anglers.  So average of about 21 fish per person.  </BLOCKQUOTE><HR>
+
+<br><B>Date:</B> Monday, December 17, 2018 at 13:08:40<BR>
+<b>Current Report: </B><BLOCKQUOTE>Sat, Dec. 15: Deep Sea Full Day caught LIMITS of rock fish for 11 anglers, up the coast North of Santa Cruz.
+Sun, Dec. 16: Deep Sea Half Day caught 100 rock fish for 16 anglers. Swells.</BLOCKQUOTE><HR>
+
+<br><B>Date:</B> Monday, December 10, 2018 at 14:53:00<BR>
+<b>Current Report: </B><BLOCKQUOTE>Monterey Bay rock fish is in season through December 31.
+We’ll be running fishing trips every Saturday and Sunday in December, plus DAILY from Wednesday 26th until the 31st. Call or check online for the complete schedule.
+
+Sunday 12/9/18 Fish 11 ppl, 50 fish, so just about half-limits on the half-day trip Sunday.
+
+Saturday 12/8/18: Early Limits of Rock Cod on both trips today! Both our 4.5-hour trip and 7-hour trips limited out on local rock fish, snapper, Lings.
+</BLOCKQUOTE><HR>
+
+<br><B>Date:</B> Monday, December 10, 2018 at 14:52:49<BR>
+<b>Current Report: </B><BLOCKQUOTE>Monterey Bay rock fish is in season through December 31.
+We’ll be running fishing trips every Saturday and Sunday in December, plus DAILY from Wednesday 26th until the 31st. Call or check online for the complete schedule.
+
+Sunday 12/9/18 Fish 11 ppl, 50 fish, so just about half-limits on the half-day trip Sunday.
+
+Saturday 12/8/18: Early Limits of Rock Cod on both trips today! Both our 4.5-hour trip and 7-hour trips limited out on local rock fish, snapper, Lings.
+</BLOCKQUOTE><HR>
+
+<br><B>Date:</B> Monday, December 10, 2018 at 14:51:09<BR>
+<b>Current Report: </B><BLOCKQUOTE>Monterey Bay rock fish is in season through December 31.
+We’ll be running fishing trips every Saturday and Sunday in December, plus DAILY from Wednesday 26th until the 31st. Call or check online for the complete schooled.
+
+Sunday 12/9/18 Fish 11 ppl, 50 fish, so just about half-limits on the half-day trip Sunday.
+
+Saturday 12/8/18: Early Limits of Rock Cod on both trips today! Both our 4.5-hour trip and 7-hour trips limited out on local rock fish, snapper, Lings.</BLOCKQUOTE><HR>
+
+<br><B>Date:</B> Saturday, December 8, 2018 at 12:17:57<BR>
+<b>Current Report: </B><BLOCKQUOTE>Saturday:  Early Limits of Rock Cod on both trips today! Both our 4.5 hour trip and 7 hour trips limited out!</BLOCKQUOTE><HR>
+
+<br><B>Date:</B> Monday, November 26, 2018 at 13:20:16<BR>
+<b>Current Report: </B><BLOCKQUOTE>Saturday 11/24 We caught half-limits of rock fish on the half-day trip on Saturday.
+Sunday 11/25 limits of rock fish on the full-day trip up the coast - Caught full limits of rock fish for 21 anglers.</BLOCKQUOTE><HR>
+
+<br><B>Date:</B> Monday, November 19, 2018 at 15:54:33<BR>
+<b>Current Report: </B><BLOCKQUOTE>Half-day rock-cod trip today off Santa Cruz, they caught 127 fish for 25 people.</BLOCKQUOTE><HR>
+
+<br><B>Date:</B> Monday, November 19, 2018 at 09:57:27<BR>
+<b>Current Report: </B><BLOCKQUOTE>Full limits for 27 anglers on the Sunday 7-hour trip up the coast. 270 rock fish, plus 10 Ling cod! Nice day out!</BLOCKQUOTE><HR>
+
+<br><B>Date:</B> Monday, November 5, 2018 at 14:26:37<BR>
+<b>Current Report: </B><BLOCKQUOTE>Nice conditions this weekend, with a side-show of humpback whales near Santa Cruz. Average catch is 3/4 limits out over the local reefs. Here is the catch report from this weekend/ all Half-Day trips for rock fish:
+
+11/1 Thu 14 people 120 fish
+11/2 Fri 9 people with easy limits of rock fish
+11/3 Sat 13 people 80 fish
+11/4 Sun 12 people 90 fish.
+
+We'll be running half-days this Sat and Sunday mornings Nov 10th and 11th.
+
+Next weekend will be a half-day on Sat 17th and Full-Day (7-hour) trip up the coast for Sunday Nov 18th.</BLOCKQUOTE><HR>
+
+<br><B>Date:</B> Wednesday, October 31, 2018 at 11:52:49<BR>
+<b>Current Report: </B><BLOCKQUOTE>Half-day trips over the weekend boated limits for 25 anglers on Saturday, and 11 anglers on Sunday. Saturday North Coast trip with 15 people caught 5 Ling Cod plus mostly limits of rock fish. </BLOCKQUOTE><HR>
+
+<br><B>Date:</B> Thursday, October 25, 2018 at 15:59:59<BR>
+<b>Current Report: </B><BLOCKQUOTE>Rock Cod limits on Thursday's 4.5 hour trip for 10 passengers.</BLOCKQUOTE><HR>
+
+<br><B>Date:</B> Monday, October 22, 2018 at 13:01:39<BR>
+<b>Current Report: </B><BLOCKQUOTE>Weekend report: Friday 7 people caught LIMITS of rock fish on the 7-hour trip.
+Saturday North Coast, 13 people with limits of Ling Cod.
+Sunday Half-day trip, 30 people caught 150 rock fish for half limits.
+</BLOCKQUOTE><HR>
+
+<br><B>Date:</B> Monday, October 15, 2018 at 10:44:43<BR>
+<b>Current Report: </B><BLOCKQUOTE>Saturday morning Oct 13, we caught 1/2 limits of rock fish for 24 anglers, and about 1/2 limits again on the afternoon trip, fishing over the local reefs -- that's 188 rock fish for 28 people.
+Sunday's 7-hour full day trip yielded full limits of rock fish for 26 anglers, plus 10 Ling cod.</BLOCKQUOTE><HR>
+
+<br><B>Date:</B> Monday, October 8, 2018 at 13:43:33<BR>
+<b>Current Report: </B><BLOCKQUOTE>Friday 10/5 Half Day Rock Cod trip, limits for all 15 passengers!  Sunday 10/7 7-hour Rock Cod trip had Limits for 27 passengers!  Saturday's trips were slowed by high winds and swell. </BLOCKQUOTE><HR>
+
+<br><B>Date:</B> Monday, October 1, 2018 at 12:38:00<BR>
+<b>Current Report: </B><BLOCKQUOTE>9/28-Friday half day, 9 people with limits, so 90 rock fish. Saturday 9/29 9-hour North Coast trip: 30 people caught 36 lings and 180 rock fish. Sunday 9/30 7-hr trip, 18 people with limits, so 180 rock fish.</BLOCKQUOTE><HR>
+
+<br><B>Date:</B> Thursday, September 27, 2018 at 13:28:06<BR>
+<b>Current Report: </B><BLOCKQUOTE>Limits of Rockfish on Wednesday's 7 hour trip!</BLOCKQUOTE><HR>
+
+<br><B>Date:</B> Tuesday, September 18, 2018 at 15:25:01<BR>
+<b>Current Report: </B><BLOCKQUOTE>Saturday half day 27 people 151 rock fish. Saturday twilight 18 people 54 rock fish. Sun 9 hr north coast 14 people 13 lings 124 rock fish. A big south ground swell is to blame for the low numbers this past weekend dirty water made for tough fishing yet, look for fishing to pick up as things turn back to normal.</BLOCKQUOTE><HR>
+
+<br><B>Date:</B> Monday, September 10, 2018 at 15:24:46<BR>
+<b>Current Report: </B><BLOCKQUOTE>Sat morning 9/8 we had limits of rock fish
+Sat twilight (afternoon trip) we had 26 people and caught 178 rock fish.
+Sunday half-day we had 26 people and 120 rock fish</BLOCKQUOTE><HR>
+
+<br><B>Date:</B> Thursday, September 6, 2018 at 12:57:31<BR>
+<b>Current Report: </B><BLOCKQUOTE>Our last 7 hour Rock Cod trip yielded Full limits for all 12 passengers.  A mix of Yellows and Reds + 19 Ling Cod!</BLOCKQUOTE><HR>
+
+<br><B>Date:</B> Monday, August 27, 2018 at 13:56:22<BR>
+<b>Current Report: </B><BLOCKQUOTE>Saturday's twilight we had 215 fish for 29 people fishing over the local reefs off Santa Cruz, North Monterey Bay. Sunday, we ran a full-day to deep water up the coast and had rock fish limits plus 13 Ling cod for 28 anglers on board Legacy.</BLOCKQUOTE><HR>
+
+<br><B>Date:</B> Saturday, August 25, 2018 at 11:26:40<BR>
+<b>Current Report: </B><BLOCKQUOTE>Fishing has been great on the deep-water day trips – full limits of big, quality rock fish on every trip this week. Local reef half-day trips are yielding average ¾ limits of good size rock fish. </BLOCKQUOTE><HR>
+
+<br><B>Date:</B> Saturday, August 25, 2018 at 11:26:19<BR>
+<b>Current Report: </B><BLOCKQUOTE>Fishing has been great on the deep-water day trips – full limits of big, quality rock fish on every trip this week. Local reef half-day trips are yielding average ¾ limits of good size rock fish. </BLOCKQUOTE><HR>
+
+<br><B>Date:</B> Tuesday, August 14, 2018 at 12:19:30<BR>
+<b>Current Report: </B><BLOCKQUOTE>Our 7-hour trips have still been the best bet for fishing. We have been consistently returning back with limits of good quality fish. Local reefs half-day trips have been hot and cold last few trips have been half-limits with mixed bags of fish. On today’s half-day we had 216 rock fish for 29 people.</BLOCKQUOTE><HR>
+
+<br><B>Date:</B> Saturday, August 11, 2018 at 15:03:36<BR>
+<b>Current Report: </B><BLOCKQUOTE>Saturday's 4.5 hour Half Day trip yielded 270 rock fish + 2 LingCod for 34 people fishing. Nice combo of Yellows, Blues and Reds.</BLOCKQUOTE><HR>
+
+<br><B>Date:</B> Wednesday, August 8, 2018 at 15:08:17<BR>
+<b>Current Report: </B><BLOCKQUOTE>Today's Full Day trip yielded Limits for all 17 passengers!  Quality Yellow and Red Rock Fish. </BLOCKQUOTE><HR>
+
+<br><B>Date:</B> Wednesday, August 1, 2018 at 15:40:59<BR>
+<b>Current Report: </B><BLOCKQUOTE>Today on Legacy, big fish! They boated 126 rock fish + 4 Ling cod for 15 people. Nice quality.</BLOCKQUOTE><HR>
+
+<br><B>Date:</B> Tuesday, July 24, 2018 at 16:37:36<BR>
+<b>Current Report: </B><BLOCKQUOTE>The last two days have produced limits of rock fish for our local reefs. Half day fishing has been great with mixed bags of fish.</BLOCKQUOTE><HR>
+
+<br><B>Date:</B> Friday, July 20, 2018 at 14:04:27<BR>
+<b>Current Report: </B><BLOCKQUOTE>Thurs 7/19 LIMITS of rock fish - yellows and blues -  for 18 anglers on Legacy.</BLOCKQUOTE><HR>
+
+<br><B>Date:</B> Wednesday, July 18, 2018 at 17:46:38<BR>
+<b>Current Report: </B><BLOCKQUOTE>Full day trip today caught early limits for 18 anglers, quality yellows, vermillion. nice conditions, about 260 feet off the Santa Cruz coast.</BLOCKQUOTE><HR>
+
+<br><B>Date:</B> Monday, July 16, 2018 at 18:25:22<BR>
+<b>Current Report: </B><BLOCKQUOTE>Half day rock cod trip on Velocity today caught 260 rock fish for 30 people; nice quality yellows and blues, no Lings today. Second trip out on Legacy boated 120 rock fish for 20 anglers. Good fishing, good weather!</BLOCKQUOTE><HR>
+
+<br><B>Date:</B> Monday, July 16, 2018 at 17:59:47<BR>
+<b>Current Report: </B><BLOCKQUOTE>Half day rock cod trip on Velocity today caught 260 rock fish for 30 people; nice quality yellows and blues, no Lings today. Second trip out on Legacy boated 120 rock fish for 20 anglers. Good fishing, good weather!</BLOCKQUOTE><HR>
+
+<br><B>Date:</B> Saturday, July 14, 2018 at 07:43:38<BR>
+<b>Current Report: </B><BLOCKQUOTE>On our latest 7 hour Rock Cod trip all 14 passengers had quality limits of Rock Fish and the boat landed 9 Lingcod! Nice, calm conditions!</BLOCKQUOTE><HR>
+
+<br><B>Date:</B> Tuesday, July 10, 2018 at 17:44:33<BR>
+<b>Current Report: </B><BLOCKQUOTE>Half-day this morning caught limits of decent rock fish for 15 anglers.</BLOCKQUOTE><HR>
+
+<br><B>Date:</B> Monday, July 9, 2018 at 10:46:41<BR>
+<b>Current Report: </B><BLOCKQUOTE>Stagnaro fish report: Local reefs have turned on, we are catching a lot of mixed quality fish. Limits reported on both boats a few days last week. The 9 hour North Coast trip came back this Sunday with 140 nice quality rock fish along with 22 Ling Cod, largest being 18 lbs. Yet, the big fish of the week was on the Velocity and was caught locally. A large Ling Cod weighing just over 30 lbs. So book your trips now, folks! Fishing has been turning out good numbers and great times for all those who join us. Thank you and we look forward to having you aboard.</BLOCKQUOTE><HR>
+
+<br><B>Date:</B> Saturday, July 7, 2018 at 16:27:02<BR>
+<b>Current Report: </B><BLOCKQUOTE>On Friday, nice conditions, the half-day on Velocity caught limits of rock fish--blues, yellows--for 20 people.</BLOCKQUOTE><HR>
+
+<br><B>Date:</B> Thursday, July 5, 2018 at 10:05:26<BR>
+<b>Current Report: </B><BLOCKQUOTE>Last full day caught limits of rockfish - canary, yellowtail, 1 Ling Cod. Next North Coast trip is Sunday morning, or join us on a half-day trip Fri or Sunday. Tickets available on our twilight trip Sat 7/7 (DFW free fishing day - no license required!)</BLOCKQUOTE><HR>
+
+<br><B>Date:</B> Tuesday, June 19, 2018 at 13:10:24<BR>
+<b>Current Report: </B><BLOCKQUOTE>North Coast, Father’s Day – they caught limits of Ling Cod for 12, and near limits rock fish up the coast.
+Saturday, the 1/2-day trip boated 160 rockfish for 20 anglers on Velocity.
+</BLOCKQUOTE><HR>
+
+<br><B>Date:</B> Sunday, June 17, 2018 at 09:54:20<BR>
+<b>Current Report: </B><BLOCKQUOTE>Limits of ling cod sat for 25 fisherman on legacy on an all day trip. Next trip is a half day trip on Monday the 18 the.</BLOCKQUOTE><HR>
+
+<br><B>Date:</B> Saturday, June 16, 2018 at 09:20:54<BR>
+<b>Current Report: </B><BLOCKQUOTE>The 4-hour trips are picking up slightly as we head towards summer. Mixed bags of fish and size. Our 7-hour deep water cod trips have been producing some good quality fish. Great size Coppers and Canaries, Lings have been hot and cold our biggest day was two weeks ago with 42 being caught on a 7-hour trip. Where? Well that's the Captains secret.</BLOCKQUOTE><HR>
+
+
+
+
+
+
+  <!--end of guestbook entries-->
+  <!--
+  <P>
+  <A HREF="2007.html">2007 Reports</A> || <A HREF="2008.html">2008 Reports</A> || <A HREF="2009.html">2009 Reports</A> || <A HREF="2010.html">2010 Reports</A>|| <a href="2011.html">2011 Reports</a>
+  <P>
+  <A HREF="2006.html">2006 Reports</A> || <A HREF="2005.html">2005 Reports</A> || <A HREF="2004.html">2004 Reports</A> || <A HREF="2003.html">2003 Reports</A> || <A HREF="2002.html">2002 Reports</A> || <A HREF="2001.html">2001 Reports</A> || <A HREF="2000.html">2000 Reports</A>
+
+
+-->
+
+  </FONT></TD>
+  </TR>
+</TABLE>
+</td>
+</TR>
+<TR>
+<TD WIDTH="40">&nbsp;
+
+</TD>
+
+<TD WIDTH="700" COLSPAN="2" ALIGN="CENTER">
+<TABLE WIDTH="700" cellpadding="0" border="0">
+<TR>
+<td valign=top width="440">
+
+
+
+
+<FONT FACE="arial, helvetica" SIZE="-1">
+<P><BR>
+<h3>BOOK YOUR TRIP TODAY</h3> </br> Call  831.427.2334 or email us at <A HREF="mailto:info@stagnaros.com">info@stagnaros.com.</A>
+
+
+</FONT></TD>
+
+<td align=left width="5">
+<P><BR><IMG SRC="../nav/line.gif" ALT="Santa Cruz, California Fishing Trips and Whale Watching Cruises, CA" WIDTH="1" HEIGHT="120">
+</TD>
+
+<td width="255">
+
+<P>&nbsp;
+<BR>
+<FONT FACE="arial, helvetica" SIZE="-1">
+
+For info on <B>Private Charter Groups,</B><BR>
+Visit our <A HREF="charters.html">Private Charters</A> page.
+<P>
+Or contact us directly at:
+<BR>Phone: 831.427.2334
+<BR>Fax: 831.475.8774<BR>Email: <A HREF="mailto:info@stagnaros.com">info@stagnaros.com</A>
+</FONT>
+</TD>
+</TR>
+</table>
+</TD>
+</TR>
+
+<TR>
+<TD WIDTH="40">&nbsp;
+
+</TD>
+
+<TD WIDTH="700" COLSPAN="2">
+<HR SIZE="2">
+
+<FONT FACE="arial, helvetica" SIZE="-2">
+
+Copyright &copy; 2000-2011 Stagnaros. All Rights Reserved
+
+<BR>
+<A HREF="http://www.webcreator.com">R &amp; D Web</A>...Dynamic Website Creation
+</FONT>
+</TD>
+</TR>
+</TABLE>
+</body>
+</html>

@@ -1,0 +1,384 @@
+############################################################################
+#                                                                          #
+# send_email()                      Version 1.5                            #
+# Written by Craig Patchett         craig@patchett.com                     #
+#     and Matthew Wright            mattw@worldwidemart.com                #
+# Created 10/4/96                   Last Modified 3/31/97                  #
+#                                                                          #
+# Copyright 1997 Craig Patchett & Matthew Wright.  All Rights Reserved.    #
+# This subroutine is part of The CGI/Perl Cookbook from John Wiley & Sons. #
+# License to use this program or install it on a server (in original or    #
+# modified form) is granted only to those who have purchased a copy of The #
+# CGI/Perl Cookbook. (This notice must remain as part of the source code.) #
+#                                                                          #
+# Function:      Sends an email message and optional attached files via    #
+#                a direct connection to an SMTP server.                    #
+#                                                                          #
+# Usage:         &send_email($subject, $from, $to[, $cc, $bcc, $body,      #
+#                            $files, $encoding]);                          #
+#                                                                          #
+# Variables:     $subject --  String containing subject of message.        #
+#                             Example 'Buy the CGI/Perl Cookbook!'         #
+#                $from --     String containing email address of person    #
+#                             sending message. An associated name can      #
+#                             follow the address if placed in parentheses. #
+#                             Example 'me@home.com (My Name)'              #
+#                $to --       String containing email addresses to send    #
+#                             message to. Multiple addresses should be     #
+#                             separated by commas. Associated names        #
+#                             can follow each address if placed in         #
+#                             parentheses.                                 #
+#                             Example 'him@place.com (Name),her@place.com' #
+#                $cc --       String containing email addresses to send    #
+#                             copies of the message to. Same format as $to.#
+#                $bcc --      String containing email addresses to send    #
+#                             blind copies of the message to (i.e., nobody #
+#                             else receiving the message will know that    #
+#                             copies were sent to these addresses). Same   #
+#                             format as $to.                               #
+#                $body --     Full path to file containing the body of the #
+#                             message or text containing body of message   #
+#                             (if $body doesn't begin with a directory     #
+#                             delimiter and contains at least one space    #
+#                             then the subroutine assumes it contains      #
+#                             message text).                               #
+#                             Example '/home/user/body.txt'                #
+#                             Example 'This is message text.'              #
+#                $files --    String containing a list of full paths,      #
+#                             separated by commas, to files to be attached #
+#                             to the message.                              #
+#                             Example '/home/user/file1, /home/user/file2' #
+#                $encoding -- String containing a list of encoding types,  #
+#                             separated by commas, to match the list of    # 
+#                             files in $file. Valid types are: text,       #
+#                             uuencode, base64                             #
+#                             Example 'text, base64'                       #
+#                                                                          #
+# Returns:       0 if successful                                           #
+#                1 if error creating socket and connecting to server       #
+#                2, @bad_addresses if addresses in *to, *cc, or *bcc were  #
+#                   rejected by the server. (Note: Just because addresses  #
+#                   were not rejected does not ensure they are valid.)     #
+#                3 if error initiating conversation with server            #
+#                4 if error specifying message sender                      #
+#                5 if error specifying message recipients                  #
+#                6 if error initiating message body transfer               #
+#                7 if error sending message body                           #
+#                8 if error shutting down server                           #
+#                9 if file couldn't be opened or found                     #
+#               10 if uuencode error                                       #
+#               11 if base 64 encode error                                 #
+#                                                                          #
+# Uses Global:   $Error_Message for descriptive error messages             #
+#                $SMTP_SERVER for the name of the SMTP server              #
+#                $WEB_SERVER for the name of the server running the        #
+#                    script                                                #
+#                                                                          #
+# Requires:      base64.pl                                                 #
+#                chkemail.pl                                               #
+#                error.pl                                                  #
+#                uuencode.pl                                               #
+#                                                                          #
+# Files Created: None                                                      #
+#                                                                          #
+############################################################################
+
+
+my $SENDMAIL_PATH = "/usr/sbin/sendmail";
+
+use Socket;
+
+sub send_email {
+
+    local($subject, $from, $to, $cc, $bcc, $body, $files, $encoding) = @_;
+    local($i, $mime_id, $error, $name, $status, $message) = '';
+    local(@MIME_FILES, @MIME_TYPES, @ATTACH_FILES, @ENCODING) = ();
+
+    # Attempt to set default values if globals aren't set
+    
+    if (!$WEB_SERVER) { $WEB_SERVER = $ENV{'SERVER_NAME'} }
+    if (!$WEB_SERVER) {
+        $Error_Message = "$WEB_SERVER is not set.";
+        return(1);
+    }
+    
+    if (!$SMTP_SERVER) { 
+        $SMTP_SERVER = "smtp.$WEB_SERVER";
+        $SMTP_SERVER =~ s/^smtp\.[^.]+\.([^.]+\.)/smtp.$1/;
+    }
+    
+    # Split the input into arrays where needed, since values are passed
+    # as strings separated by commas.
+
+    local(@to) = split(/, */, $to);
+    local(@cc) = split(/, */, $cc);
+    local(@bcc) = split(/, */, $bcc);
+    local(@attach_files) = split(/, */, $files);
+    local(@encoding) = split(/, */, $encoding);
+
+    # Check to see what file encoding is being used and if necessary, set the 
+    # mime flag and id.
+
+    for ($i = 0; $i < @attach_files; ++$i) {
+        if (!(-e $attach_files[$i])) {
+            $Error_Message = "$attach_files[$i] does not exist.";
+            return(9);
+        }
+        if ($encoding[$i] eq 'base64') { 
+            push(@MIME_FILES, $attach_files[$i]);
+            push(@MIME_TYPES, $encoding[$i]);
+        }
+        else { 
+            push(@ATTACH_FILES, $attach_files[$i]);
+            push(@ENCODING, $encoding[$i]);
+        }
+    }
+    if (@MIME_FILES) { 
+        push(@ATTACH_FILES, @MIME_FILES);
+        push(@ENCODING, @MIME_TYPES);
+        $mime_id = 'CGI_Perl_Cookbook_-' . time;
+    }
+
+	local($CRLF);
+	if($SENDMAIL_PATH) {
+		$CRLF = "\012";
+	} else {
+	    # SMTP commands end in CRLF (\015\012)
+    
+#	    local($CRLF) = "\015\012";
+	    $CRLF = "\015\012";
+	}
+    
+    # Set up other variables
+
+	if($SENDMAIL_PATH) {
+		if(!open(SMTP, "|".$SENDMAIL_PATH." -t")) {
+			$Error_Message = "Can't open pipe to ".$SENDMAIL_PATH.".";
+			return(1);
+		}
+	} else {    
+	    local($SMTP_SERVER_PORT) = 25;
+	    local($AF_INET) = ($] > 5 ? AF_INET : 2);
+	    local($SOCK_STREAM) = ($] > 5 ? SOCK_STREAM : 1);
+	    local(@bad_addresses) = ();
+	    $, = ', ';
+	    $" = ', ';
+    
+	    # Translate hostnames to corresponding addresses and pack
+    
+	    local($local_address) = (gethostbyname($WEB_SERVER))[4];
+	    local($local_socket_address) = pack('S n a4 x8', $AF_INET, 0, $local_address);
+
+	    local($server_address) = (gethostbyname($SMTP_SERVER))[4];
+	    local($server_socket_address) = pack('S n a4 x8', $AF_INET, $SMTP_SERVER_PORT, $server_address);
+
+	    # Translate protocol name to corresponding number
+    
+	    local($protocol) = (getprotobyname('tcp'))[2];
+    
+	    # Make the socket filehandle
+    
+	    if (!socket(SMTP, $AF_INET, $SOCK_STREAM, $protocol)) {
+	        $Error_Message = "Could not make socket filehandle ($!).";
+	        return(1);
+	    }
+    
+	    # Give the socket an address
+    
+	    bind(SMTP, $local_socket_address);
+    
+	    # Connect to the server
+    
+	    if (!(connect(SMTP, $server_socket_address))) {
+	        $Error_Message = "Could not connect to server ($!).";
+	        return(1);
+	    }
+    
+	    # Set the socket to be line buffered
+    
+	    local($old_selected) = select(SMTP); 
+	    $| = 1; 
+	    select($old_selected);
+	}
+   
+    # Set regex to handle multiple line strings
+    
+    $* = 1;
+    
+	if($SENDMAIL_PATH) {
+	    print SMTP "To: $to$CRLF";
+	    print SMTP "From: $from$CRLF";
+	    print SMTP "Cc: $cc$CRLF" if $cc;
+	    print SMTP "Bcc: $bcc$CRLF" if $bcc;
+	    print SMTP "Subject: $subject$CRLF";
+	} else {
+	    # Read first response from server (wait for .75 seconds first)
+    
+	    select(undef, undef, undef, .75);
+	    sysread(SMTP, $_, 1024);
+
+	    # Initiate a conversation with the server
+    
+	    print SMTP "HELO $WEB_SERVER$CRLF";
+	    sysread(SMTP, $_, 1024);
+	    while (/(^|(\r?\n))[^0-9]*((\d\d\d).*)$/g) { $status = $4; $message = $3}
+	    if ($status != 250) { $Error_Message = $message; return(3) }
+
+	    # Tell the server where we're sending from
+    
+	    print SMTP "MAIL FROM:<$from>$CRLF";
+	    sysread(SMTP, $_, 1024);
+	    if (!/[^0-9]*250/) { $Error_Message = $_; return(4) }
+    
+	    # Tell the server where we're sending to
+    
+	    local($good_addresses) = 0;
+	    foreach $address (@to, @cc, @bcc) {
+        
+	        if ($address) {
+        
+	            # Make sure address is enclosed in <>
+            
+	            $address =~ /(\(.*\))/;
+	            $name = $1 ? "$1 " : '';
+	            $address =~ /([^<)\s]+@\S+\.[^>(\s]+)/;
+	            $address = "<$1>";
+
+	            # Hand it to the server
+            
+	            print SMTP "RCPT TO:$address$CRLF";
+	            sysread(SMTP, $_, 1024);
+	            /[^0-9]*(\d\d\d)/;
+	            if ($1 ne '250') { push(@bad_addresses, "$name$address", $_) }
+	            else { ++$good_addresses }
+	        }
+	    }
+	    if (!$good_addresses) {
+	        $Error_Message = $_;
+	        return(5, @bad_addresses)
+	    }
+
+	    # Give the server the message header
+    
+	    print SMTP "DATA$CRLF";
+	    sysread(SMTP, $_, 1024);
+	    if (!/[^0-9]*354/) { $Error_Message = $_; return(6) }
+	    print SMTP "To: @to$CRLF";
+	    print SMTP "From: $from$CRLF";
+	    print SMTP "CC: @cc$CRLF" if $cc;
+	    print SMTP "Subject: $subject$CRLF";
+	}
+
+    # If there are mime files to attach, we need special headers.
+
+    if ($mime_id) {
+        print SMTP "x-sender: $from$CRLF";
+        print SMTP "x-mailer: CGI/Perl Cookbook$CRLF";
+        print SMTP "Mime-Version: 1.0$CRLF";
+        print SMTP "Content-Type: multipart/mixed; boundary=\"$mime_id\"$CRLF$CRLF";
+        print SMTP "--$mime_id$CRLF";
+        print SMTP "Content-Type: text/plain; charset=\"US-ASCII\"$CRLF$CRLF";
+    }
+    else { print SMTP $CRLF }   
+
+    # Output the message body.
+        
+    if ($body) {
+        if (!($body =~ /^[\\\/:]/) && ($body =~ /\s/)) { print SMTP $body }
+        elsif (-e $body && -T $body) { &parse_template($body, *SMTP) }
+    }
+    print SMTP $CRLF;
+
+    # Attach each file.
+
+    for ($i = 0; $i < @ATTACH_FILES; ++$i) {
+        $attach_file = $ATTACH_FILES[$i];
+        $encoding = $ENCODING[$i];
+        
+        # Split the filename by directories.  / for unix, \ for dos, : for mac
+        
+        $attach_file =~ /[\\\/:]([^\\\/:]+)$/g;
+        $filename = $1;
+
+        # Attach text file.
+        
+        if ($encoding eq 'text' && -e $attach_file) {
+            if (!(open(TEXT, $attach_file))) {
+                $Error_Message = "Can't open text file $attach_file ($!).";
+                return(9);
+            }
+            print SMTP "Attachment:\t$filename$CRLF";
+            print SMTP "Encoding:\tNone$CRLF$CRLF";
+
+            # Attach the text file, converting any lines with a single period
+            
+            while (<TEXT>) { s/^\.([\n\r\f]+)/..$1/; print SMTP }
+            close(TEXT);
+            print SMTP "\n\n";
+        }
+
+        # Attach uuencoded file.
+
+        elsif ($encoding eq 'uuencode' && -e $attach_file) {
+            print SMTP "Attachment:\t$filename$CRLF";
+            print SMTP "Encoding:\tUUEncoded$CRLF";
+            print SMTP "begin 600 $filename\n";
+            $uuencoded_data = &uuencode($attach_file, 'open->attach_file');
+            if (!$uuencoded_data) { return(10) }
+            print SMTP $uuencoded_data;
+            print SMTP "`\nend\n\n";
+        }
+        
+        # Attach MIME files
+        
+        elsif ($encoding eq 'base64' && -e $attach_file) {
+            print SMTP "--$mime_id$CRLF";
+
+            # If it is a text file, print a text content type, otherwise print 
+            # an octet stream.
+
+            if (-T $attach_file) {
+                print SMTP "Content-type: text/plain; charset=US-ASCII; name=\"$filename\"$CRLF";
+            }
+            else {
+                print SMTP "Content-type: application/octet-stream; name=\"$filename\"$CRLF";
+            }
+            print SMTP "Content-transfer-encoding: base64$CRLF$CRLF";
+
+            # Encode the data with base 64.
+
+            $base64_encoded_data = &base64_encode_file($attach_file);
+            if (!$base64_encoded_data) { return(11) }
+            print SMTP "$base64_encoded_data$CRLF";
+        }
+    }
+    
+    # Print the final mime id if necessary
+    
+    if ($mime_id) { print SMTP "--$mime_id--$CRLF" }
+    
+	if($SENDMAIL_PATH) {
+		print SMTP $CRLF;
+		close(SMTP);
+		return(0);
+	} else {
+	    # End the conversation
+    
+	    print SMTP "$CRLF.$CRLF";
+	    sysread(SMTP, $_, 1024);
+	    if (!/[^0-9]*250/) { $Error_Message = $_; return(7) }
+        
+	    # Disconnect from the server
+    
+	    if (!shutdown(SMTP, 2)) { 
+	        $Error_Message = "Could not shut down server ($!).";
+	        return(8, @bad_addresses);
+	    }
+	    elsif (@bad_addresses) {
+	        return(2, @bad_addresses);
+	    }
+	    else { return(0) }
+	}
+}
+
+1;

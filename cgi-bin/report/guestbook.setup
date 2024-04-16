@@ -1,0 +1,101 @@
+  $guestbookurl = "/report/index.html";
+  $guestbookreal = "/home/stagnaros_com/public_html/report/index.html";
+  $cgiurl = "/cgi-bin/report/report.cgi";
+
+  $cgi_lib_location = "./cgi-lib.pl";
+  $cgi_sol_location = "./cgi-lib.sol";
+  $mail_lib_location = "./mail-lib.pl";
+
+  @bad_words = ("fuck", "shit", "piss", "damn", "hell");
+
+  $mail = "no";
+  $recipient = "stagnaros\@stagnaros.com";
+  $email_subject = "Entry to Reports";
+
+  $linkmail = "no";
+
+  $remote_mail = "no";
+
+  $allow_html = yes;
+
+  @required_fields = ("report");
+
+  $thank_you_email_text = "Thanks very much for stopping by my site and a
+  double thanks you for taking the time to sign my guestbook. I hope you
+  found something useful and please let other netizens know of the
+  existence of my little corner of the net..";
+
+sub add_form_header
+{
+
+print <<"end_of_add_form_header";
+<HTML>
+<HEAD>
+<TITLE>Stagnaros Fishing Report (Add Form)</TITLE>
+</HEAD>
+<BODY>
+<CENTER>
+<H2>Add your current report</H2>
+</CENTER>
+Fill in the blank below to add to your report page. The date will be added automatically. Please check your spelling before hitting submit. 
+<P><HR>
+end_of_add_form_header
+
+}
+
+sub thank_you_html_header
+{
+
+print <<"end_of_html";
+<HTML>
+<HEAD>
+<TITLE>Thank You</TITLE>
+</HEAD>
+<BODY>
+<P>
+Your entry has now been added to your report page as
+follows...Should you need us to fix anything, call 530-468-2424 or email at steelhead\@webcreator.com
+<BLOCKQUOTE>
+end_of_html
+}
+
+
+sub missing_required_field_note
+{
+print <<"end_of_note";
+<HTML>
+<HEAD>
+<TITLE>Data Entry Error</TITLE>
+</HEAD>
+<BODY BGCOLOR = "FFFFFF" TEXT = "000000">
+<BLOCKQUOTE>
+Woopsy, You forgot to fill out $field and I am not allowed to add
+your report without it.  Would you please type something in
+below...
+</BLOCKQUOTE>
+end_of_note
+}
+
+sub output_add_form
+{
+
+print <<"end_of_add_form";
+<FORM METHOD = "POST" ACTION = "$cgiurl">
+<TABLE>
+<TR>
+<TH ALIGN = "left">Current Report:</TH>
+<TD><TEXTAREA NAME = "report" COLS = "60" ROWS = "4">
+$form_data{'report'}</TEXTAREA></TD>
+</TR></TABLE>
+<CENTER>
+<INPUT TYPE = "submit" VALUE = "Submit Addition">
+<INPUT TYPE = "reset">
+</FORM>
+<P>
+<A HREF = "$guestbookurl">Back to the Reports page</A><BR>
+</CENTER>
+</BODY>
+</HTML>
+end_of_add_form
+}
+

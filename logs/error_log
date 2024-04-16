@@ -1,0 +1,2 @@
+[Sun Apr 14 10:11:32.331441 2024] [ssl:error] [pid 19392] AH02032: Hostname stagnaros.com provided via SNI and hostname www.stagnaros.com provided via HTTP are different
+[Mon Apr 15 18:08:55.182052 2024] [ssl:error] [pid 29909] AH02032: Hostname santacruzfishingtrips.com provided via SNI and hostname www.stagnaros.com provided via HTTP are different

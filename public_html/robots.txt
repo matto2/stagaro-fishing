@@ -1,0 +1,12 @@
+# robots.txt for http://www.stagnaros.com/
+# Thanks for being kind enough to check!
+
+User-agent: *
+
+# the following directories contain no public information:
+Disallow: /images/
+Disallow: /nav/
+Disallow: /sanddab2_html_MMtmp411f28d5/
+Disallow: /_notes/
+
+Sitemap: http://www.stagnaros.com/sitemap.xml

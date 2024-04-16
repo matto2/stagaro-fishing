@@ -1,0 +1,67 @@
+.top-bar {
+    padding-top: .5rem;
+    margin-bottom: 3rem;
+    padding-bottom: 0;
+}
+
+.top-bar, .top-bar ul {
+    background-color: #39adac;
+    color: white;
+    font-size: x-large;
+}
+
+a {
+    background-color: transparent;
+    color: #39adac;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.menu, .tabs {
+    list-style-type: none;
+    font-weight: bold;
+}
+
+.menu-text-right {
+    color: inherit;
+    line-height: 1;
+    padding: 2rem 1rem;
+    list-style: none;
+    font-weight: normal;
+    font-size: 1rem;
+    padding-top: 1.4rem;
+}		
+
+.top-bar, .top-bar ul {
+    background-color: #39adac;
+    color: white;
+    font-size: large;
+}	
+
+.callout.primary {
+    background-color: #ddf4f4;
+    margin: 1.5rem;
+}	
+
+.callout>:last-child {
+    margin-bottom: 0;
+    line-height: 1.5;
+}
+
+menu>li>a {
+    display: block;
+    padding: .1rem 1rem;
+}
+
+.columns:last-child {
+    float: right;
+}
+
+.boats {
+	padding: 1rem 2 rem;
+}
+
+a:hover {
+    color: #008080;
+}
